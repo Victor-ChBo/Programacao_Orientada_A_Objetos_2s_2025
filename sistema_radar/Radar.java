@@ -12,5 +12,4 @@ public void EmitirNotificacao(String placa, Integer VelocidadeObservada){
     System.out.println("Localizacao: "+this.localizacao);
     System.out.println("Velocidade da via: "+this.LimiteVelocidade);
     }
-
 }
