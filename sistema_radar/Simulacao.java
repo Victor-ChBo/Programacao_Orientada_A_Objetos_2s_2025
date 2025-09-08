@@ -2,21 +2,13 @@ package sistema_radar;
 
 public class Simulacao {
     public static void main(String[] args) {
-        Carro carro1 = new Carro();
-        carro1.ano=2001;
-        carro1.modelo="Exemplo1";
-        carro1.placa="ABC1234";
-        carro1.velocidade=0;
+        Carro carro1 = new Carro("XYZ9087", 0, 2005, "KWID");
 
-        Carro carro2 = new Carro();
-        carro2.ano=2007;
-        carro2.modelo="Exemplo2";
-        carro2.placa="XYZ987";
-        carro2.velocidade=0;
+        Carro carro2 = new Carro("ABC1234", 0, 2000, "GOL");
 
-        Radar radar = new Radar();
-        radar.localizacao = "Pistao Sul";
-        radar.LimiteVelocidade = 60;
+        Carro carro3 = new Carro ("JKL567", 0, 1996, "UNO");
+
+        Radar radar = new Radar("Pistão sul", 60);
 
         radar.AvaliarVelocidade(carro1);
 
@@ -59,5 +51,19 @@ public class Simulacao {
         carro2.frear();
 
         radar.AvaliarVelocidade(carro2);
+
+        carro3.acelerar();
+        carro3.acelerar();
+        carro3.acelerar();
+
+        radar.AvaliarVelocidade(carro3);
+
+        carro3.acelerar();
+        carro3.acelerar();
+        carro3.acelerar();
+        carro3.acelerar();
+        carro3.acelerar();
+
+        radar.AvaliarVelocidade(carro3);
     }
 }
