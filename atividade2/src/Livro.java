@@ -9,7 +9,6 @@ public class Livro extends Material {
         this.autor = autor;
     }
 
-    @Override
     public void descricao() {
         System.out.println("Tipo: Livro");
         System.out.println("Título: " + getTitulo());
