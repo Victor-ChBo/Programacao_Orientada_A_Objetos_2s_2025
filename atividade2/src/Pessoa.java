@@ -1,6 +1,6 @@
 package atividade2.src;
 
-public abstract class Pessoa {
+public abstract class Pessoa implements TomadorEmprestimo{
     private String nome;
     private String email;
 

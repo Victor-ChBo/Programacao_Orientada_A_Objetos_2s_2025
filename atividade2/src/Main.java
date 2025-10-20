@@ -1,5 +1,6 @@
 package atividade2.src;
 
+import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,6 +11,12 @@ public class Main {
         ArrayList<Pessoa> pessoas = new ArrayList<>();
         ArrayList<Material> materiais = new ArrayList<>();
         ArrayList<Emprestimo> emprestimos = new ArrayList<>();
+
+        //exemplo fixo
+
+        Instituicao UCB = new Instituicao("UCB", "123456", "Brasilia");
+        Livro livro1 = new Livro("livro1", 2024, "victor");
+        Emprestimo e1 = new Emprestimo("UCB", livro1, "01/10/2025", "20/10/2025");
 
         int opcao;
 
