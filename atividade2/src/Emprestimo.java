@@ -1,26 +1,31 @@
 package atividade2.src;
-
 public class Emprestimo {
-
-    private String tomadorEmprestimo;
+    private TomadorEmprestimo tomadorEmprestimo;
     private ItemEmprestavel itemEmprestavel;
     private String dataEmprestimo;
     private String dataDevolucao;
 
-    public String getTomadorEmprestimo() {
+    public Emprestimo(TomadorEmprestimo tomadorEmprestimo, ItemEmprestavel itemEmprestavel, String dataEmprestimo, String dataDevolucao) {
+        this.tomadorEmprestimo = tomadorEmprestimo;
+        this.itemEmprestavel = itemEmprestavel;
+        this.dataEmprestimo = dataEmprestimo;
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    public TomadorEmprestimo getTomadorEmprestimo() {
         return this.tomadorEmprestimo;
     }
 
-    public void setTomadorEmprestimo(String tomadorEmprestimo) {
+    public void setTomadorEmprestimo(TomadorEmprestimo tomadorEmprestimo) {
         this.tomadorEmprestimo = tomadorEmprestimo;
     }
 
-    public ItemEmprestavel getitemEmprestavel() {
-        return this.ItemEmprestavel;
+    public ItemEmprestavel getItemEmprestavel() {
+        return this.itemEmprestavel;
     }
 
-    public void setItemEmprestavel(ItemEmprestavel ItemEmprestavel) {
-        this.ItemEmprestavel = ItemEmprestavel;
+    public void setItemEmprestavel(ItemEmprestavel itemEmprestavel) {
+        this.itemEmprestavel = itemEmprestavel;
     }
 
     public String getDataEmprestimo() {
@@ -39,22 +44,12 @@ public class Emprestimo {
         this.dataDevolucao = dataDevolucao;
     }
 
-    public Emprestimo(String tomadorEmprestimo, ItemEmprestavel ItemEmprestavel, String dataEmprestimo, String dataDevolucao) {
-        this.tomadorEmprestimo = tomadorEmprestimo;
-        this.ItemEmprestavel = ItemEmprestavel;
-        this.dataEmprestimo = dataEmprestimo;
-        this.dataDevolucao = dataDevolucao;
-    }
-
-    public void exibirDetalhes() {
-        System.out.println("--- Detalhes do Empréstimo ---");
-        System.out.println("Usuário:");
-        // Chama o exibirInfo() da classe Usuario/Funcionario
-        this.tomadorEmprestimo.exibirInfo(); 
-        System.out.println("ItemEmprestavel:");
-        // Chama o descricao() da classe Livro/Revista
-        this.ItemEmprestavel.descricao();
-        System.out.println("Data de Empréstimo: " + this.dataEmprestimo);
-        System.out.println("Data de Devolução: " + this.dataDevolucao);
+    public void exibirDetalhes(){
+        System.out.println("Data do empréstimo: " + this.dataEmprestimo);
+        System.out.println("Data da devolução: " + this.dataDevolucao);
+        System.out.println("TomadorEmprestimo vinculada");
+        this.tomadorEmprestimo.exibirInfo();
+        System.out.println("ItemEmprestavel vinculada");
+        this.itemEmprestavel.descricao();
     }
 }

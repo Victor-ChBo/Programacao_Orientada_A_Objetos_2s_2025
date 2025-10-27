@@ -1,11 +1,10 @@
 package atividade2.src;
 
-import java.lang.Thread.UncaughtExceptionHandler;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
 
         ArrayList<Pessoa> pessoas = new ArrayList<>();
@@ -15,8 +14,9 @@ public class Main {
         //exemplo fixo
 
         Instituicao UCB = new Instituicao("UCB", "123456", "Brasilia");
+        Colecao c1 = new Colecao("Colecao1", 10);
         Livro livro1 = new Livro("livro1", 2024, "victor");
-        Emprestimo e1 = new Emprestimo("UCB", livro1, "01/10/2025", "20/10/2025");
+        Emprestimo e1 = new Emprestimo(UCB, c1, "01/10/2025", "20/10/2025");
 
         int opcao;
 
@@ -44,8 +44,13 @@ public class Main {
                     System.out.print("Matrícula: ");
                     int matricula = sc.nextInt();
                     sc.nextLine();
-                    pessoas.add(new Usuario(nomeU, emailU, matricula));
-                    System.out.println("Usuário cadastrado com sucesso!\n");
+
+                    try {
+                        pessoas.add(new Usuario(nomeU, emailU, matricula));
+                        System.out.println("Usuário cadastrado com sucesso!\n");
+                    } catch (Exception e) {
+                        System.out.println("Nome inválido");
+                    }
                     break;
 
                 case 2:
@@ -92,7 +97,7 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("=== Lista de Materiais ===");
+                   System.out.println("=== Lista de Materiais ===");
                     for (Material m : materiais) {
                         m.descricao();
                         System.out.println("-------------------");
@@ -127,6 +132,14 @@ public class Main {
                                                    dataE, dataD));
                     System.out.println("Empréstimo cadastrado!\n");
                     break;
+
+                    try {emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
+                                                   materiais.get(idxMaterial),
+                                                   dataE, dataD));
+                    System.out.println("Empréstimo cadastrado!\n");
+                    } catch (IndexOutOfBoundsException e){
+                    System.out.println("Índice inválido para usuário ou material.\n");
+                    }
 
                 case 8:
                     System.out.println("=== Lista de Empréstimos ===");

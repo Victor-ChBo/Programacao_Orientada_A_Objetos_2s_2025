@@ -2,13 +2,11 @@ package atividade2.src;
 
 public class Colecao implements ItemEmprestavel{
     private String proprietario;
-    private Integer quantidade;
-    private String itens;
+    private Integer qtItens;
 
-    public Colecao(String proprietario, Integer quantidade, String itens) {
+    public Colecao(String proprietario, Integer qtItens) {
         this.proprietario = proprietario;
-        this.quantidade = quantidade;
-        this.itens = itens;
+        this.qtItens = qtItens;
     }
 
     public String getProprietario() {
@@ -19,23 +17,16 @@ public class Colecao implements ItemEmprestavel{
         this.proprietario = proprietario;
     }
 
-    public Integer getQuantidade() {
-        return this.quantidade;
+    public Integer getQtItens() {
+        return this.qtItens;
     }
 
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
-    }
-
-    public String getItens() {
-        return this.itens;
-    }
-
-    public void setItens(String itens) {
-        this.itens = itens;
+    public void setQtItens(Integer qtItens) {
+        this.qtItens = qtItens;
     }
 
     public void descricao(){
-        System
+        System.out.println("Proprietário: " + this.proprietario);
+        System.out.println("Qt. Itens: " + this.qtItens);
     }
 }

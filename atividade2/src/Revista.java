@@ -16,9 +16,7 @@ public class Revista extends Material {
         System.out.println("Edição: " + this.edicao);
     }
 
-    @Override
     public void exibirDetalhes() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'exibirDetalhes'");
     }
 
