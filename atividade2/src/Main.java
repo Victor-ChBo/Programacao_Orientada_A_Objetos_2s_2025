@@ -135,9 +135,9 @@ public class Main {
                                                    materiais.get(idxMaterial),
                                                    dataE, dataD));
                     System.out.println("Empréstimo cadastrado!\n");
-                    break;
 
-                    try {emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
+                    try {
+                    emprestimos.add(new Emprestimo(pessoas.get(idxUsuario),
                                                    materiais.get(idxMaterial),
                                                    dataE, dataD));
                     System.out.println("Empréstimo cadastrado!\n");

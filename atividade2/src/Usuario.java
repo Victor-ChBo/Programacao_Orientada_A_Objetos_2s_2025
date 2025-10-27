@@ -9,11 +9,11 @@ public class Usuario extends Pessoa {
         this.matricula = matricula;
 
          if (nome != null || nome.length() < 1) {
-            throw new NomeInvalidoException("Nome inválido.");
+            throw new NomeInvalidoException();
         }
 
         if (email != null || email.length() < 3) {
-            throw new EmailInvalidoException("Email inválido.");
+            throw new EmailInvalidoException();
         }
 
     }
