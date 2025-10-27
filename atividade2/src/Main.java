@@ -98,7 +98,6 @@ public class Main {
                         System.out.println("-------------------");
                     }
                     break;
-
                 case 7:
                     if (pessoas.isEmpty() || materiais.isEmpty()) {
                         System.out.println("É necessário ter pelo menos uma pessoa e um material cadastrados.\n");
