@@ -48,8 +48,12 @@ public class Main {
                     try {
                         pessoas.add(new Usuario(nomeU, emailU, matricula));
                         System.out.println("Usuário cadastrado com sucesso!\n");
-                    } catch (Exception e) {
+                    } catch (NomeInvalidoException e) {
                         System.out.println("Nome inválido");
+                    } catch (EmailInvalidoException e) {
+                        System.out.println("Email inválido");
+                    } catch (Exception e) {
+                        System.out.println("Algo deu errado ao cadastrar o usuário.");
                     }
                     break;
 
